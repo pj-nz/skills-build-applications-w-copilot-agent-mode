@@ -2,13 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Django Server",
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Frontend React App",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "cwd": "${workspaceFolder}/octofit-tracker/frontend",
+      "port": 3000
+    },
+    {
       "type": "python",
       "request": "launch",
+      "name": "Launch Backend Django Server",
       "program": "${workspaceFolder}/octofit-tracker/backend/manage.py",
-      "args": ["runserver", "0.0.0.0:8000"],
-      "django": true,
-      "justMyCode": true
+      "args": ["runserver", "8000"],
+      "django": true
     }
   ]
 }
